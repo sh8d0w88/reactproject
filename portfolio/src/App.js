@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Link, Routes } from 'react-router-dom';
 import Projects from './Projects.js'; 
 import Articles from './Articles.js'; 
 import About from './About.js'; 
+import Navigation from './Nav.js'
 import './App.css';
  
 function App() {
@@ -14,24 +15,22 @@ function App() {
     <BrowserRouter >
       <div className="App">
   
+      <div className="navigation">
+          <div className="navigation-sub">
+                                          
+            <Navigation />
+
+  
+          </div>
+      </div>
+
         // Set up the Router
         <Routes>
           <Route exact path="/" element={<Projects/>} />
           <Route path="/articles" element={<Articles/>} />
           <Route path="/about" element={<About/>} />
         </Routes>
-  
-        <div className="navigation">
-          <img src={logo} className="logo-image" alt="Logo Image" />
-          <div className="navigation-sub">
-                                          
-            // Set up the Links
-            <Link to="/" className="item">Projects</Link>
-            <Link to="/articles" className="item">Articles</Link>
-            <Link to="/about" className="item">About</Link>
-  
-          </div>
-        </div>
+
       </div>
     </BrowserRouter>
   );
